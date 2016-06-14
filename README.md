@@ -2,7 +2,7 @@ Quick Share Playbook
 ====================
 
 This is an Ansible playbook that deploys a simple FTP server on a single
-node. I use it to share larger files with friends.
+node. I use it to share large files with friends.
 
 Quickstart
 ----------
@@ -13,11 +13,15 @@ Quickstart
 
 2. Clone this playbook locally:
 
+```
     $ git clone https://github.com/joehakimrahme/quickshare-playbook.git
-    
+```
+
 3. Copy the file you want to share
 
+```
     $ cp "$my_file" roles/ftp/files/
+```
     
 4. Fill out the options in `group_vars/all`.
 
@@ -26,7 +30,9 @@ Quickstart
 
 6. Execute the playbook.
 
+```
     $ ansible-playbooks -i hosts site.yml
+```
 
 
 That's it, your file is now available at the following address:
