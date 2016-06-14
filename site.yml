@@ -1,0 +1,8 @@
+---
+- name: Quick Share
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+    - ftp
