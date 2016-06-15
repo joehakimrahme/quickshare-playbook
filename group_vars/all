@@ -1,3 +1,7 @@
-# Uncomment this line and give it the name of the file you want to share.
+# Change the value of the following option to give it the filename of your
+# target file
 # Remember that this file has to be copied to roles/ftp/files/
-# filename: my_file.mpeg
+filename: file.jpeg
+
+# This will set the server to the desired timezone
+timezone: Europe/Paris

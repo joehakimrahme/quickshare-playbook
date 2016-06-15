@@ -1,3 +1,6 @@
 ---
 - name: upgrade all packages
   yum: name=* state=latest
+
+- name: Set the timezone
+  file: name=/etc/localtime state=link src=/usr/share/zoneinfo/{{ timezone }}
