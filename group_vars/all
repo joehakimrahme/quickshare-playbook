@@ -1,7 +1,14 @@
 # Change the value of the following option to give it the filename of your
 # target file
 # Remember that this file has to be copied to roles/ftp/files/
-filename: file.jpeg
+filename: file.sample
 
 # This will set the server to the desired timezone
 timezone: Europe/Paris
+
+# Allow anonymous download. If set to YES vsftp won't require authentication
+# before serving the file. If set to NO, make sure to define a username/password
+# pair.
+anonymous_enable: "NO"
+username: joe
+password: joe

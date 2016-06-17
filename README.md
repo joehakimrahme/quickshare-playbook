@@ -42,9 +42,9 @@ That's it, your file is now available at the following address:
 Some notes
 ----------
 
-1. The FTP server is configured to accept anonymous download but not anonymous
-   upload. In future developments I want to have the possibility to block
-   anonymous access and have configurable user/passwords for access.
+1. It's possible to configure vsftp to accept anonymous uploads. It's also
+   possible to require a username/password. This can be controlled in the
+   `group_vars/all` file.
    
 2. While not necessary, it's **highly recommended** that you deploy this
    playbook on a discardable fresh node. The way I do it is to boot a new VM on

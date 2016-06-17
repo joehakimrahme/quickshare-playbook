@@ -9,11 +9,12 @@
 # capabilities.
 #
 # Allow anonymous FTP? (Beware - allowed by default if you comment this out).
-anonymous_enable=YES
+anonymous_enable={{ anonymous_enable }}
 #
 # Uncomment this to allow local users to log in.
 # When SELinux is enforcing check for SE bool ftp_home_dir
-local_enable=NO
+local_enable=YES
+#allow_writeable_chroot=YES
 #
 # Uncomment this to enable any form of FTP write command.
 write_enable=NO
@@ -97,7 +98,7 @@ xferlog_std_format=YES
 # (Warning! chroot'ing can be very dangerous. If using chroot, make sure that
 # the user does not have write access to the top level directory within the
 # chroot)
-chroot_local_user=YES
+#chroot_local_user=YES
 #chroot_list_enable=YES
 # (default follows)
 #chroot_list_file=/etc/vsftpd/chroot_list
@@ -125,3 +126,5 @@ listen_ipv6=YES
 pam_service_name=vsftpd
 userlist_enable=YES
 tcp_wrappers=YES
+
+anon_root=/opt/files

@@ -2,11 +2,18 @@
 - name: Installing vsftpd
   yum: name=vsftpd state=latest
 
-- name: Start vsftpd
-  service: name=vsftpd state=restarted
-
 - name: Copying the configuration file
   template: src=vsftpd.conf.j2 dest=/etc/vsftpd/vsftpd.conf
 
+- name: Create the FTP root directory
+  file: name=/opt/files state=directory mode=0755
+
+- name: Start vsftpd
+  service: name=vsftpd state=restarted
+
 - name: Uploading the file
-  copy: dest=/var/ftp/pub/{{ filename }} src={{ filename }}
+  copy: dest=/opt/files/{{ filename }} src={{ filename }}
+
+- name: Create auth user
+  user: name={{ username }} password={{ password | password_hash('sha512') }} home=/opt/files
+  when: anonymous_enable == "NO"
