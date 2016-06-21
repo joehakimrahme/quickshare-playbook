@@ -4,3 +4,13 @@
 
 - name: Set the timezone
   file: name=/etc/localtime state=link src=/usr/share/zoneinfo/{{ timezone }}
+
+- name: Start firewalld
+  service: name=firewalld state=started
+
+- name: Enable SSH
+  firewalld: service=ssh permanent=true state=enabled
+
+- name: Enable FTP
+  firewalld: service=ftp permanent=true state=enabled
+  notify: Restart firewalld
