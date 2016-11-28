@@ -56,4 +56,4 @@ Some notes
 
 4. Remember that your recipient doesn't need a fancy FTP client to get the file
    since most modern web browsers also support this protocol. And here's a quick
-   reminder that even [curl can FTP](rahme.info/curl-can-ftp).
+   reminder that even [curl can FTP](http://rahme.info/curl-can-ftp).
